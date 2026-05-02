@@ -460,7 +460,17 @@ export default function Dashboard() {
                     <Cell key={`cell-${i}`} fill={COLORS[i % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(v) => `$${v.toFixed(2)}`} />
+                <Tooltip
+                  formatter={(v) => `$${v.toFixed(2)}`}
+                  contentStyle={{
+                    background: '#0f172a',
+                    border: '1px solid #334155',
+                    borderRadius: '8px',
+                    color: '#f8fafc'
+                  }}
+                  labelStyle={{ color: '#f8fafc' }}
+                  itemStyle={{ color: '#f8fafc' }}
+                />
               </PieChart>
             </ResponsiveContainer>
           </div>
@@ -471,7 +481,18 @@ export default function Dashboard() {
               <BarChart data={categoryData}>
                 <XAxis dataKey="name" tick={{ fontSize: 12 }} />
                 <YAxis tickFormatter={(v) => `$${v}`} tick={{ fontSize: 12 }} />
-                <Tooltip formatter={(v) => `$${v.toFixed(2)}`} />
+                <Tooltip
+                  formatter={(v) => `$${v.toFixed(2)}`}
+                  cursor={{ fill: 'rgba(59, 130, 246, 0.12)' }}
+                  contentStyle={{
+                    background: '#0f172a',
+                    border: '1px solid #334155',
+                    borderRadius: '8px',
+                    color: '#f8fafc'
+                  }}
+                  labelStyle={{ color: '#f8fafc' }}
+                  itemStyle={{ color: '#f8fafc' }}
+                />
                 <Bar dataKey="value" fill="#4f46e5" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
